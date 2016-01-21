@@ -40,6 +40,7 @@
         android:text="@string/center_text"/>
 
     <Button
+        android:id="@+id/center"
         android:background="@color/deep_purple"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,6 +63,26 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:text="@string/bottom_center_text"/>
-    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/center">
+
+        <TextView
+            android:text="BIG"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/red"/>
+
+        <TextView
+            android:text="SHORT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:background="@color/blue"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
