@@ -4,6 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
     tools:context=".Library">
+
+    <Button
+        android:id="@+id/topLeft"
+        android:background="@color/red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/left_text"/>
+
+    <Button
+        android:background="@color/pink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/right_text"/>
+
+    <Button
+        android:background="@color/purple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topLeft"
+        android:layout_alignParentLeft="true"
+        android:text="@string/below_left_text"/>
+
+    <Button
+        android:background="@color/blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/center_text"/>
+
+    <Button
+        android:background="@color/deep_purple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/center_text"/>
+    
+    <Button
+        android:background="@color/blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomCenter"
+        android:layout_centerHorizontal="true"
+        android:text="@string/above_bottom_center_text"/>
+
+    <Button
+        android:id="@+id/bottomCenter"
+        android:background="@color/indigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/bottom_center_text"/>
+    
 
 </RelativeLayout>
