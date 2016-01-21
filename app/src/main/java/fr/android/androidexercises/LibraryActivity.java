@@ -1,5 +1,7 @@
 package fr.android.androidexercises;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -24,7 +26,11 @@ public class LibraryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Replace with startActivity() to start BookActivity
+                // Affiche un message
                 Toast.makeText(LibraryActivity.this, R.string.toast_todo, Toast.LENGTH_SHORT).show();
+                // Lance la vue BookActivity
+                Intent book = new Intent(LibraryActivity.this, BookActivity.class);
+                startActivity(book);
             }
         });
     }
