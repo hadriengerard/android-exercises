@@ -1,5 +1,7 @@
 package fr.android.androidexercises;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +10,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 public class LibraryActivity extends AppCompatActivity {
 
@@ -33,6 +38,37 @@ public class LibraryActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button dateButton = (Button) findViewById(R.id.dateButton);
+
+        dateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(LibraryActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        Toast.makeText(LibraryActivity.this, dayOfMonth + "/" + monthOfYear + "/" + year,
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }, 2015, 10, 26).show();
+            }
+        });
+
+        Button timeButton = (Button) findViewById(R.id.timeButton);
+
+        timeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new TimePickerDialog(LibraryActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        Toast.makeText(LibraryActivity.this, hourOfDay + ":" + minute,
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }, 12, 12, true).show();
+            }
+        });
+
     }
 
     @Override
