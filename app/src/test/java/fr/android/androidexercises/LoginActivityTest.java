@@ -5,6 +5,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
+import org.robolectric.shadows.ShadowToast;
+
+
 
 @RunWith(CustomRobolectricTestRunner.class)
 
@@ -28,7 +31,7 @@ public class LoginActivityTest {
     }
 
     @Test
-    public void should_set_not_logged_state() throws Exception
+     public void should_set_not_logged_state() throws Exception
     {
         // Given
         // When
@@ -36,5 +39,24 @@ public class LoginActivityTest {
         // Then
         Assertions.assertThat(activity.loginLayout).isVisible();
         Assertions.assertThat(activity.loggedText).isGone();
+    }
+
+    @Test
+    public void testNotLogged() throws Exception
+    {
+        Assertions.assertThat(activity.loginLayout).isVisible();
+        Assertions.assertThat(activity.loggedText).isGone();
+    }
+
+    @Test
+    public void testMessage() throws Exception
+    {
+        // Given
+
+        // When
+        activity.message(R.string.action_login);
+        // Then
+        String textToast = ShadowToast.getTextOfLatestToast();
+        org.assertj.core.api.Assertions.assertThat(textToast).isEqualTo("log me in");
     }
 }
