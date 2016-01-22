@@ -2,6 +2,7 @@ package fr.android.androidexercises;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -24,7 +25,9 @@ public class LibraryActivity extends AppCompatActivity {
         RecyclerView bookRecyclerView = (RecyclerView) this.findViewById(R.id.book_recycler_view);
         bookRecyclerView.setHasFixedSize(true);
 
-        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
+        GridLayoutManager mLayoutManager;
+        mLayoutManager = new GridLayoutManager(this, getResources().getBoolean(R.bool.landscape) ? 2 : 1);
+
         bookRecyclerView.setLayoutManager(mLayoutManager);
 
         bookRecyclerView.setAdapter(new BookRecyclerAdapter(this, books));
